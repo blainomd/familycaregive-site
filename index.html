@@ -1,0 +1,523 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>familycaregive.com — Care for the people who matter most</title>
+<meta name="description" content="You're the one who noticed. Now get support that stays. Free family care assessment — no commitment, no pressure.">
+<meta property="og:title" content="familycaregive.com — Care for the people who matter most">
+<meta property="og:description" content="You're the one who noticed. Now get support that stays. Free family care assessment.">
+<meta property="og:url" content="https://familycaregive.com">
+<meta property="og:type" content="website">
+<link rel="canonical" href="https://familycaregive.com/">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://harnesshealth.ai/footer.js" defer></script>
+
+<style>
+:root {
+  --navy:      #1B2A4A;
+  --navy-dim:  #2D3F5E;
+  --teal:      #0D7377;
+  --teal-soft: #E6F4F4;
+  --teal-bright: #14a8ae;
+  --white:     #FFFFFF;
+  --off-white: #F7F9FA;
+  --rule:      #DDE3E8;
+  --ink:       #1B2A4A;
+  --ink-mid:   #4A5568;
+  --ink-soft:  #718096;
+  --warm:      #FDF8F2;
+}
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--white);
+  color: var(--ink);
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 17px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: inherit; text-decoration: none; }
+
+/* NAV */
+nav {
+  position: sticky; top: 0; z-index: 50;
+  background: rgba(255,255,255,0.96);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--rule);
+  padding: 0 1.5rem;
+  height: 56px;
+  display: flex; align-items: center; justify-content: space-between;
+}
+.nav-logo { font-weight: 700; font-size: 15px; color: var(--navy); letter-spacing: -0.01em; }
+.nav-logo span { color: var(--teal); }
+.nav-cta {
+  background: var(--teal); color: #fff;
+  padding: 8px 18px; border-radius: 6px;
+  font-size: 13px; font-weight: 600;
+}
+
+/* HERO */
+.hero {
+  padding: 5.5rem 1.5rem 4.5rem;
+  max-width: 680px; margin: 0 auto; text-align: center;
+}
+.hero-eyebrow {
+  font-size: 11px; font-weight: 700;
+  letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--teal); margin-bottom: 1.2rem;
+}
+.hero h1 {
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 700; line-height: 1.15;
+  letter-spacing: -0.025em; color: var(--navy);
+  margin-bottom: 1.2rem;
+}
+.hero-sub {
+  font-size: 1.05rem; color: var(--ink-mid);
+  line-height: 1.65; max-width: 520px; margin: 0 auto 2.5rem;
+}
+.hero-sub strong { color: var(--ink); font-weight: 600; }
+.btn-primary {
+  display: inline-block;
+  background: var(--teal); color: #fff;
+  padding: 14px 32px; border-radius: 7px;
+  font-size: 1rem; font-weight: 600;
+  transition: background 0.15s;
+}
+.btn-primary:hover { background: #0b8a8f; }
+.hero-note {
+  margin-top: 1rem; font-size: 0.82rem; color: var(--ink-soft);
+}
+
+/* RECOGNITION STRIP */
+.recognition {
+  background: var(--warm);
+  border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule);
+  padding: 2.8rem 1.5rem;
+}
+.recognition-inner {
+  max-width: 780px; margin: 0 auto;
+}
+.recognition-label {
+  font-size: 11px; font-weight: 700;
+  letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--ink-soft); text-align: center; margin-bottom: 2rem;
+}
+.recognition-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+}
+.recog-item {
+  display: flex; flex-direction: column; gap: 0.4rem;
+}
+.recog-q {
+  font-size: 0.92rem; color: var(--ink-mid); line-height: 1.5; font-style: italic;
+}
+.recog-n {
+  font-size: 0.82rem; font-weight: 600; color: var(--ink-soft);
+}
+
+/* WHAT THIS IS */
+.what {
+  padding: 5rem 1.5rem;
+  max-width: 860px; margin: 0 auto;
+}
+.section-eyebrow {
+  font-size: 11px; font-weight: 700;
+  letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--teal); margin-bottom: 1rem;
+}
+.section-h2 {
+  font-size: clamp(1.6rem, 3.5vw, 2.2rem);
+  font-weight: 700; letter-spacing: -0.025em;
+  line-height: 1.2; color: var(--navy);
+  margin-bottom: 1rem;
+}
+.section-sub {
+  font-size: 0.98rem; color: var(--ink-mid);
+  line-height: 1.65; max-width: 580px; margin-bottom: 3rem;
+}
+.what-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+}
+.what-card {
+  background: var(--off-white);
+  border: 1px solid var(--rule);
+  border-radius: 12px; padding: 1.75rem;
+}
+.what-card-icon {
+  width: 36px; height: 36px; border-radius: 8px;
+  background: var(--teal-soft);
+  display: flex; align-items: center; justify-content: center;
+  margin-bottom: 1rem;
+}
+.what-card h3 {
+  font-size: 1.02rem; font-weight: 700;
+  color: var(--navy); margin-bottom: 0.5rem;
+}
+.what-card p {
+  font-size: 0.88rem; color: var(--ink-mid); line-height: 1.6;
+}
+
+/* HOW IT WORKS */
+.how {
+  background: var(--navy);
+  padding: 5rem 1.5rem;
+}
+.how-inner { max-width: 760px; margin: 0 auto; }
+.how .section-eyebrow { color: var(--teal-bright); }
+.how .section-h2 { color: #fff; }
+.how .section-sub { color: rgba(255,255,255,0.62); }
+.steps {
+  display: flex; flex-direction: column; gap: 0;
+}
+.step {
+  display: grid; grid-template-columns: 48px 1fr;
+  gap: 1.2rem; padding: 1.5rem 0;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+.step:last-child { border-bottom: none; }
+.step-num {
+  width: 36px; height: 36px; border-radius: 50%;
+  background: var(--teal); color: #fff;
+  font-size: 0.82rem; font-weight: 700;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0; margin-top: 2px;
+}
+.step-body h4 {
+  font-size: 1rem; font-weight: 700;
+  color: #fff; margin-bottom: 0.35rem;
+}
+.step-body p {
+  font-size: 0.88rem; color: rgba(255,255,255,0.60); line-height: 1.6;
+}
+
+/* DIFFERENCE */
+.diff {
+  padding: 5rem 1.5rem;
+  background: var(--warm);
+}
+.diff-inner { max-width: 820px; margin: 0 auto; }
+.compare-table {
+  width: 100%; border-collapse: collapse;
+  font-size: 0.88rem; margin-top: 2.5rem;
+}
+.compare-table th {
+  padding: 10px 14px; font-weight: 700; font-size: 0.78rem;
+  letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-soft);
+  text-align: left; border-bottom: 2px solid var(--rule);
+}
+.compare-table td {
+  padding: 13px 14px; border-bottom: 1px solid var(--rule);
+  vertical-align: top; line-height: 1.5; color: var(--ink-mid);
+}
+.compare-table td:first-child { color: var(--ink); font-weight: 500; }
+.compare-table .good { color: var(--teal); font-weight: 600; }
+.compare-table .bad { color: #9ca3af; }
+
+/* PROOF */
+.proof {
+  padding: 5rem 1.5rem;
+  max-width: 820px; margin: 0 auto; text-align: center;
+}
+.proof-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 2rem; margin: 2.5rem 0;
+}
+.proof-stat-n {
+  font-size: 2.4rem; font-weight: 800;
+  letter-spacing: -0.04em; color: var(--teal);
+  line-height: 1;
+}
+.proof-stat-l {
+  font-size: 0.82rem; color: var(--ink-soft);
+  margin-top: 0.3rem; line-height: 1.45;
+}
+
+/* CTA BAND */
+.cta-band {
+  background: var(--teal);
+  padding: 4.5rem 1.5rem;
+  text-align: center;
+}
+.cta-band h2 {
+  font-size: clamp(1.6rem, 3.5vw, 2.2rem);
+  font-weight: 700; letter-spacing: -0.025em;
+  color: #fff; margin-bottom: 0.85rem;
+}
+.cta-band p {
+  font-size: 1rem; color: rgba(255,255,255,0.78);
+  max-width: 480px; margin: 0 auto 2rem;
+}
+.btn-white {
+  display: inline-block;
+  background: #fff; color: var(--teal);
+  padding: 14px 32px; border-radius: 7px;
+  font-size: 1rem; font-weight: 700;
+}
+
+/* FOOTER */
+footer {
+  background: var(--navy);
+  padding: 2.5rem 1.5rem;
+  text-align: center;
+}
+footer p {
+  font-size: 0.78rem; color: rgba(255,255,255,0.35);
+  line-height: 1.7;
+}
+footer a {
+  color: rgba(255,255,255,0.50);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+@media (max-width: 600px) {
+  .recognition-grid { grid-template-columns: 1fr; }
+  .what-grid { grid-template-columns: 1fr; }
+  .proof-stats { grid-template-columns: 1fr 1fr; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo">family<span>caregive</span>.com</div>
+  <a href="https://co-op.care/assess" class="nav-cta">Free assessment</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-eyebrow">For adult children of aging parents</div>
+  <h1>You noticed something<br>was changing.</h1>
+  <p class="hero-sub">
+    A little slower on the stairs. More alone than they let on. You're not ready to call it a crisis.
+    But you're not willing to look away either.
+    <strong>That instinct is the right one. Here's what to do with it.</strong>
+  </p>
+  <a href="https://co-op.care/assess" class="btn-primary">Start free family assessment</a>
+  <p class="hero-note">No commitment. Five minutes. Tells you what kind of support actually fits.</p>
+</section>
+
+<!-- RECOGNITION STRIP -->
+<section class="recognition">
+  <div class="recognition-inner">
+    <div class="recognition-label">You've probably said one of these</div>
+    <div class="recognition-grid">
+      <div class="recog-item">
+        <p class="recog-q">"She says she's fine. But she called me twice this week because she forgot where she put her keys."</p>
+        <span class="recog-n">Adult daughter, Denver</span>
+      </div>
+      <div class="recog-item">
+        <p class="recog-q">"He lives alone. My sister and I are three hours away and we can't agree on what to do."</p>
+        <span class="recog-n">Adult son, Fort Collins</span>
+      </div>
+      <div class="recog-item">
+        <p class="recog-q">"The hospital discharge planner gave us a pamphlet. That was it."</p>
+        <span class="recog-n">Adult daughter, Boulder</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT THIS IS -->
+<section class="what">
+  <div class="section-eyebrow">What familycaregive.com is</div>
+  <h2 class="section-h2">A starting point. Not a sales pitch.</h2>
+  <p class="section-sub">
+    We connect families with co-op.care — a worker-owned home care cooperative in Boulder
+    built for exactly this moment. Physician-supervised. HSA-eligible. Caregivers who stay.
+  </p>
+  <div class="what-grid">
+    <div class="what-card">
+      <div class="what-card-icon">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0D7377" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+      </div>
+      <h3>Caregiver matching</h3>
+      <p>Matched to a W-2 caregiver who knows your family's situation — not a rotating agency stranger. Same person, every visit.</p>
+    </div>
+    <div class="what-card">
+      <div class="what-card-icon">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0D7377" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M20 21a8 8 0 1 0-16 0"/></svg>
+      </div>
+      <h3>Physician oversight</h3>
+      <p>A licensed physician reviews every care plan and signs off. AI assists — a real doctor decides. The care your parent gets is medically supervised.</p>
+    </div>
+    <div class="what-card">
+      <div class="what-card-icon">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0D7377" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg>
+      </div>
+      <h3>HSA-eligible membership</h3>
+      <p>$59/mo membership. A Letter of Medical Necessity unlocks HSA/FSA payment. At a 30% tax bracket, membership costs around $41/mo after the tax benefit.</p>
+    </div>
+    <div class="what-card">
+      <div class="what-card-icon">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0D7377" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+      </div>
+      <h3>Home monitoring</h3>
+      <p>Wearable vitals and activity monitoring available as an add-on for members with chronic conditions — billed through your physician as a covered benefit where applicable.</p>
+    </div>
+    <div class="what-card">
+      <div class="what-card-icon">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0D7377" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+      </div>
+      <h3>Caregivers who own equity</h3>
+      <p>Co-op.care is worker-owned. Caregivers earn $25–28/hr W-2 plus equity per shift. Ownership is why they stay. Industry turnover is 80%. Ours is projected at 15%.</p>
+    </div>
+    <div class="what-card">
+      <div class="what-card-icon">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0D7377" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+      </div>
+      <h3>Emergency care profile</h3>
+      <p>A QR code in any ER pulls your parent's care plan, medications, allergies, and healthcare proxy — readable by any provider, anywhere.</p>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="how">
+  <div class="how-inner">
+    <div class="section-eyebrow">How it works</div>
+    <h2 class="section-h2">Four steps from worry to supported.</h2>
+    <p class="section-sub">The assessment is free. No commitment until you decide it's right.</p>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-body">
+          <h4>Free family assessment</h4>
+          <p>Five questions. Tells us what your parent actually needs — not what a brochure assumes. We only suggest care when the assessment shows it makes sense.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-body">
+          <h4>Physician care plan review</h4>
+          <p>A licensed physician reviews the assessment and signs a care plan. AI drafts — the physician decides. You see the doctor's name on everything.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-body">
+          <h4>Caregiver match</h4>
+          <p>We match your family to a background-checked, insured W-2 caregiver. Not a contractor, not an app — a person who chose this work and owns equity in doing it well.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <div class="step-body">
+          <h4>Membership: $59/mo</h4>
+          <p>Covers matching, physician oversight, the emergency care profile, advance directive storage, and HSA/FSA support. Care hours billed separately at $35–45/hr as needed.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DIFFERENCE -->
+<section class="diff">
+  <div class="diff-inner">
+    <div class="section-eyebrow">Why this is different</div>
+    <h2 class="section-h2">Every other option has a structural flaw.</h2>
+    <p class="section-sub">The problems with home care aren't bad luck. They're built into the business model.</p>
+    <table class="compare-table">
+      <thead>
+        <tr>
+          <th>The problem</th>
+          <th>Typical home care</th>
+          <th>co-op.care</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Caregiver turnover</td>
+          <td class="bad">80% annual (PHI National 2024)</td>
+          <td class="good">15% projected — caregivers own equity</td>
+        </tr>
+        <tr>
+          <td>Medical oversight</td>
+          <td class="bad">None — care plans are administrative</td>
+          <td class="good">Licensed physician reviews every plan</td>
+        </tr>
+        <tr>
+          <td>Cost</td>
+          <td class="bad">$25–30/hr, no HSA path, no LMN</td>
+          <td class="good">$59/mo + HSA-eligible via LMN</td>
+        </tr>
+        <tr>
+          <td>Continuity</td>
+          <td class="bad">Different aide every week</td>
+          <td class="good">Matched caregiver, same person</td>
+        </tr>
+        <tr>
+          <td>Emergency readiness</td>
+          <td class="bad">Family scrambles to reconstruct history</td>
+          <td class="good">QR emergency care profile, ER-readable</td>
+        </tr>
+        <tr>
+          <td>Who benefits</td>
+          <td class="bad">Franchise shareholders</td>
+          <td class="good">Caregivers + families — cooperative ownership</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- PROOF -->
+<section class="proof">
+  <div class="section-eyebrow">The numbers behind the model</div>
+  <h2 class="section-h2">The cooperative form changes the math.</h2>
+  <div class="proof-stats">
+    <div>
+      <div class="proof-stat-n">80%</div>
+      <div class="proof-stat-l">industry caregiver turnover — the reason you can't keep anyone</div>
+    </div>
+    <div>
+      <div class="proof-stat-n">15%</div>
+      <div class="proof-stat-l">co-op.care projected turnover — ownership changes the incentive</div>
+    </div>
+    <div>
+      <div class="proof-stat-n">$59</div>
+      <div class="proof-stat-l">per month membership — often $36–41 after HSA tax benefit</div>
+    </div>
+    <div>
+      <div class="proof-stat-n">50</div>
+      <div class="proof-stat-l">states of physician coverage — care plans reviewed anywhere</div>
+    </div>
+  </div>
+  <p style="font-size:0.85rem;color:var(--ink-soft);max-width:540px;margin:0 auto;">
+    Co-op.care is a Colorado Limited Cooperative Association — legally structured so it
+    cannot be acquired by a roll-up without member consent. The stability isn't a brand promise.
+    It's in the bylaws.
+  </p>
+</section>
+
+<!-- CTA BAND -->
+<section class="cta-band">
+  <h2>You don't have to have it all figured out.</h2>
+  <p>The assessment takes five minutes. It tells you what kind of support fits your family's situation — before you commit to anything.</p>
+  <a href="https://co-op.care/assess" class="btn-white">Start free assessment</a>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>
+    familycaregive.com is a referral site for <a href="https://co-op.care" target="_blank" rel="noopener">co-op.care</a> —
+    a worker-owned home care cooperative in Boulder, CO.<br>
+    Not medical advice. Care recommendations are made by licensed physicians following individual assessment.<br>
+    HSA eligibility depends on your plan and administrator. Consult your HSA administrator.
+  </p>
+</footer>
+
+</body>
+</html>
