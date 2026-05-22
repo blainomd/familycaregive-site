@@ -126,6 +126,107 @@ nav {
   font-size: 0.82rem; font-weight: 600; color: var(--ink-soft);
 }
 
+/* CAREGIVER STRAIN SELF-CHECK */
+.selfcheck {
+  background: var(--off-white);
+  border-bottom: 1px solid var(--rule);
+  padding: 5rem 1.5rem;
+}
+.selfcheck-inner { max-width: 640px; margin: 0 auto; }
+.selfcheck .section-h2 em { color: var(--teal); font-style: italic; }
+.selfcheck-lede {
+  font-size: 0.98rem; color: var(--ink-mid);
+  line-height: 1.65; text-align: center;
+  max-width: 540px; margin: 0 auto 2.5rem;
+}
+.selfcheck-lede strong { color: var(--ink); font-weight: 600; }
+.sc-card {
+  background: var(--white);
+  border: 1px solid var(--rule);
+  border-radius: 16px;
+  padding: 2rem 1.75rem;
+  box-shadow: 0 4px 24px rgba(27,42,74,0.06);
+  min-height: 280px;
+}
+.sc-progress {
+  height: 5px; width: 100%;
+  background: var(--teal-soft); border-radius: 99px;
+  overflow: hidden; margin-bottom: 1.5rem;
+}
+.sc-progress-bar {
+  height: 100%; width: 16.6%;
+  background: var(--teal); border-radius: 99px;
+  transition: width 0.3s ease;
+}
+.sc-step-label {
+  font-size: 0.75rem; font-weight: 700;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--ink-soft); margin-bottom: 0.75rem;
+}
+.sc-question {
+  font-family: 'Manrope', sans-serif;
+  font-size: 1.25rem; font-weight: 700;
+  line-height: 1.35; color: var(--navy);
+  margin-bottom: 1.5rem;
+}
+.sc-options { display: flex; flex-direction: column; gap: 0.6rem; }
+.sc-option {
+  text-align: left; width: 100%;
+  background: var(--off-white);
+  border: 1.5px solid var(--rule);
+  border-radius: 10px;
+  padding: 0.85rem 1.1rem;
+  font-size: 0.95rem; font-weight: 500; color: var(--ink-mid);
+  cursor: pointer; transition: all 0.15s;
+  font-family: 'Inter', sans-serif;
+}
+.sc-option:hover {
+  border-color: var(--teal);
+  background: var(--teal-soft);
+  color: var(--navy);
+}
+.sc-back, .sc-restart {
+  background: none; border: none;
+  color: var(--ink-soft); font-size: 0.85rem; font-weight: 600;
+  cursor: pointer; margin-top: 1.25rem; padding: 0;
+  font-family: 'Inter', sans-serif;
+}
+.sc-back:hover, .sc-restart:hover { color: var(--teal); }
+.sc-restart { display: block; margin: 1rem auto 0; text-align: center; }
+.sc-result-band {
+  font-size: 0.75rem; font-weight: 700;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--teal); margin-bottom: 0.6rem;
+}
+.sc-result-title {
+  font-family: 'Manrope', sans-serif;
+  font-size: 1.4rem; font-weight: 800;
+  line-height: 1.25; color: var(--navy);
+  margin-bottom: 0.85rem; letter-spacing: -0.02em;
+}
+.sc-result-body {
+  font-size: 0.98rem; color: var(--ink-mid);
+  line-height: 1.65; margin-bottom: 1.5rem;
+}
+.sc-steps { display: flex; flex-direction: column; gap: 0.75rem; }
+.sc-step {
+  display: flex; align-items: flex-start; gap: 0.7rem;
+  background: var(--off-white);
+  border: 1px solid var(--rule); border-radius: 10px;
+  padding: 0.85rem 1rem;
+}
+.sc-step-check {
+  flex-shrink: 0; width: 20px; height: 20px;
+  color: var(--teal); margin-top: 1px;
+}
+.sc-step span { font-size: 0.9rem; color: var(--ink-mid); line-height: 1.5; }
+.sc-step strong { color: var(--ink); font-weight: 600; }
+.sc-disclaimer {
+  font-size: 0.78rem; color: var(--ink-soft);
+  line-height: 1.55; text-align: center;
+  max-width: 540px; margin: 1.5rem auto 0;
+}
+
 /* WHAT THIS IS */
 .what {
   padding: 5rem 1.5rem;
@@ -337,6 +438,47 @@ footer a {
   </div>
 </section>
 
+<!-- CAREGIVER STRAIN SELF-CHECK -->
+<section class="selfcheck" id="selfcheck">
+  <div class="selfcheck-inner">
+    <div class="section-eyebrow" style="text-align:center;">A check-in for you — not them</div>
+    <h2 class="section-h2" style="text-align:center;">How are <em>you</em> holding up?</h2>
+    <p class="selfcheck-lede">
+      Everyone asks how your parent is doing. Almost no one asks how <strong>you</strong> are.
+      This is a private, 6-question reflection on the weight you&apos;ve been carrying.
+      Nothing is saved. No email required. Just an honest moment for yourself.
+    </p>
+
+    <div class="sc-card" id="sc-card">
+      <!-- Quiz -->
+      <div id="sc-quiz">
+        <div class="sc-progress"><div class="sc-progress-bar" id="sc-progress-bar"></div></div>
+        <p class="sc-step-label" id="sc-step-label">Question 1 of 6</p>
+        <p class="sc-question" id="sc-question"></p>
+        <div class="sc-options" id="sc-options"></div>
+        <button class="sc-back" id="sc-back" type="button" hidden>&larr; Previous</button>
+      </div>
+
+      <!-- Result -->
+      <div id="sc-result" hidden>
+        <p class="sc-result-band" id="sc-result-band"></p>
+        <h3 class="sc-result-title" id="sc-result-title"></h3>
+        <p class="sc-result-body" id="sc-result-body"></p>
+        <div class="sc-steps" id="sc-steps"></div>
+        <a href="https://co-op.care/assess" class="btn-primary" style="display:block;text-align:center;margin-top:1.5rem;">
+          Find respite support through co-op.care
+        </a>
+        <button class="sc-restart" id="sc-restart" type="button">Take it again</button>
+      </div>
+    </div>
+    <p class="sc-disclaimer">
+      This reflection is adapted from the concept behind the Zarit Burden Interview, a widely used
+      caregiver-strain screen. It is not a diagnosis or medical advice. If you are in crisis, call or
+      text 988 (Suicide &amp; Crisis Lifeline).
+    </p>
+  </div>
+</section>
+
 <!-- WHAT THIS IS -->
 <section class="what">
   <div class="section-eyebrow">What familycaregive.com is</div>
@@ -525,6 +667,144 @@ footer a {
     HSA eligibility depends on your plan and administrator. Consult your HSA administrator.
   </p>
 </footer>
+
+<script>
+(function () {
+  // Caregiver-strain reflection. Items adapted from the concept behind the
+  // Zarit Burden Interview (frequency framing). Scored 0–4 each; total 0–24.
+  var QUESTIONS = [
+    "Do you feel you don't have enough time for yourself?",
+    "Do you feel stressed between caring for your parent and the rest of your life — work, kids, partner?",
+    "Has your own health, sleep, or energy slipped because of caregiving?",
+    "Do you feel you should be doing more, or that you're not doing it well enough?",
+    "Have you pulled back from friends or things you used to enjoy?",
+    "Do you feel alone with this — like the weight is mostly on you?"
+  ];
+  var SCALE = [
+    { label: "Never", value: 0 },
+    { label: "Rarely", value: 1 },
+    { label: "Sometimes", value: 2 },
+    { label: "Quite often", value: 3 },
+    { label: "Nearly always", value: 4 }
+  ];
+
+  // Warm, non-clinical result bands keyed to total score.
+  var BANDS = [
+    {
+      max: 7,
+      band: "You're carrying it — and coping",
+      title: "You're holding steady, but keep an eye on yourself.",
+      body: "Right now the load feels manageable, and that's genuinely good. Caregiving has a way of creeping up, though — the people who burn out are rarely the ones who saw it coming. Building a little support now, before you need it, is the kindest thing you can do for both of you.",
+      steps: [
+        "<strong>Set up a backstop now.</strong> Knowing a trusted caregiver is one call away makes the hard weeks far less frightening.",
+        "<strong>Protect one thing that's yours.</strong> A walk, a class, an evening — put it on the calendar like an appointment.",
+        "<strong>Get a free assessment.</strong> It tells you what kind of support would actually fit, with zero commitment."
+      ]
+    },
+    {
+      max: 15,
+      band: "The strain is real",
+      title: "You're stretched thinner than you may be admitting.",
+      body: "What you're feeling is one of the most common — and most under-recognized — experiences there is. This isn't a sign you're failing. It's a signal that you've been absorbing too much alone for too long. The single biggest predictor of caregiver burnout isn't how much care is needed — it's how alone the caregiver feels. You don't have to keep carrying all of it.",
+      steps: [
+        "<strong>Bring in respite care.</strong> Even a few hours a week of trusted, consistent help can change everything. It's not giving up — it's staying in the game.",
+        "<strong>Share the load with a circle.</strong> Make who-does-what explicit so it stops living entirely in your head.",
+        "<strong>Talk to a real person.</strong> A free assessment with co-op.care maps what support fits — and a physician oversees the care plan."
+      ]
+    },
+    {
+      max: 24,
+      band: "You're running on empty",
+      title: "Please hear this: you need support, and that's okay.",
+      body: "By your own honest answers, you are deep in it — and you've probably been there a while. Caregivers at this point often feel they have no right to ask for help. You do. Stepping back enough to breathe isn't abandoning your parent; it's how you keep showing up for them at all. The strongest move right now is to stop doing this alone.",
+      steps: [
+        "<strong>Get relief soon.</strong> Consistent respite care — a trained, insured caregiver who shows up reliably — is the fastest way to get your footing back.",
+        "<strong>Let a coordinator carry the logistics.</strong> co-op.care's Sage handles scheduling and the moving parts so your energy goes to your parent, not the paperwork.",
+        "<strong>Loop in a physician.</strong> co-op.care care plans are physician-supervised, so the medical weight isn't on you to figure out alone.",
+        "<strong>If you're struggling to cope</strong>, call or text 988 — the Suicide &amp; Crisis Lifeline — anytime."
+      ]
+    }
+  ];
+
+  var CHECK_SVG = '<svg class="sc-step-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>';
+
+  var answers = [];
+  var current = 0;
+
+  var elQuiz = document.getElementById("sc-quiz");
+  var elResult = document.getElementById("sc-result");
+  var elQuestion = document.getElementById("sc-question");
+  var elOptions = document.getElementById("sc-options");
+  var elStepLabel = document.getElementById("sc-step-label");
+  var elBar = document.getElementById("sc-progress-bar");
+  var elBack = document.getElementById("sc-back");
+  var elRestart = document.getElementById("sc-restart");
+
+  function renderQuestion() {
+    elQuestion.textContent = QUESTIONS[current];
+    elStepLabel.textContent = "Question " + (current + 1) + " of " + QUESTIONS.length;
+    elBar.style.width = ((current) / QUESTIONS.length * 100) + "%";
+    elBack.hidden = current === 0;
+    elOptions.innerHTML = "";
+    SCALE.forEach(function (opt) {
+      var btn = document.createElement("button");
+      btn.type = "button";
+      btn.className = "sc-option";
+      btn.textContent = opt.label;
+      if (answers[current] === opt.value) {
+        btn.style.borderColor = "var(--teal)";
+        btn.style.background = "var(--teal-soft)";
+      }
+      btn.addEventListener("click", function () {
+        answers[current] = opt.value;
+        if (current < QUESTIONS.length - 1) {
+          current++;
+          renderQuestion();
+        } else {
+          showResult();
+        }
+      });
+      elOptions.appendChild(btn);
+    });
+  }
+
+  function showResult() {
+    elBar.style.width = "100%";
+    var total = answers.reduce(function (a, b) { return a + (b || 0); }, 0);
+    var band = BANDS.find(function (b) { return total <= b.max; }) || BANDS[BANDS.length - 1];
+
+    document.getElementById("sc-result-band").textContent = band.band;
+    document.getElementById("sc-result-title").textContent = band.title;
+    document.getElementById("sc-result-body").textContent = band.body;
+
+    var stepsWrap = document.getElementById("sc-steps");
+    stepsWrap.innerHTML = "";
+    band.steps.forEach(function (s) {
+      var div = document.createElement("div");
+      div.className = "sc-step";
+      div.innerHTML = CHECK_SVG + "<span>" + s + "</span>";
+      stepsWrap.appendChild(div);
+    });
+
+    elQuiz.hidden = true;
+    elResult.hidden = false;
+  }
+
+  elBack.addEventListener("click", function () {
+    if (current > 0) { current--; renderQuestion(); }
+  });
+
+  elRestart.addEventListener("click", function () {
+    answers = [];
+    current = 0;
+    elResult.hidden = true;
+    elQuiz.hidden = false;
+    renderQuestion();
+  });
+
+  renderQuestion();
+})();
+</script>
 
 </body>
 </html>
