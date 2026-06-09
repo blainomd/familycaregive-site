@@ -330,6 +330,36 @@ nav {
 .compare-table .good { color: var(--teal); font-weight: 600; }
 .compare-table .bad { color: #9ca3af; }
 
+/* MOMENTS */
+.moments {
+  padding: 5rem 1.5rem;
+  background: var(--off-white);
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+}
+.moments-inner { max-width: 820px; margin: 0 auto; }
+.moments-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem; margin-top: 2.5rem;
+}
+.moment-card {
+  background: var(--white);
+  border: 1px solid var(--rule);
+  border-radius: 14px;
+  padding: 1.75rem;
+}
+.moment-tag {
+  font-size: 10px; font-weight: 700;
+  letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--teal); margin-bottom: 0.75rem;
+}
+.moment-card p {
+  font-size: 0.92rem; color: var(--ink-mid);
+  line-height: 1.65;
+}
+.moment-card p strong { color: var(--ink); font-weight: 600; }
+
 /* PROOF */
 .proof {
   padding: 5rem 1.5rem;
@@ -619,6 +649,47 @@ footer a {
         </tr>
       </tbody>
     </table>
+  </div>
+</section>
+
+<!-- MOMENTS — what actually changed -->
+<section class="moments">
+  <div class="moments-inner">
+    <div class="section-eyebrow">What actually changed</div>
+    <h2 class="section-h2">Three families. Three specific things.</h2>
+    <p class="section-sub">
+      Not outcomes. Moments — the kind that happen in the first few weeks when
+      care is finally in place.
+    </p>
+    <div class="moments-grid">
+      <div class="moment-card">
+        <div class="moment-tag">The first same-person visit</div>
+        <p>
+          Her mother had been through four different aides in six months. She
+          stopped trying to remember names. When the same caregiver came back
+          the second Tuesday, her mother said, <strong>"I thought she wouldn't
+          come back."</strong> She did. She has, every week since.
+        </p>
+      </div>
+      <div class="moment-card">
+        <div class="moment-tag">The phone call that didn't happen</div>
+        <p>
+          He used to get a call every Friday from his father — something was
+          missing, something hurt, something was confusing. The calls didn't
+          stop. <strong>They changed.</strong> Now his father calls to tell him
+          what he did that day. The caregiver handled the rest.
+        </p>
+      </div>
+      <div class="moment-card">
+        <div class="moment-tag">The HSA surprise</div>
+        <p>
+          She assumed home care was a luxury. The Letter of Medical Necessity
+          from the co-op.care physician changed the math. <strong>The $708
+          annual membership came out of her mother's HSA.</strong> Pre-tax.
+          She hadn't known that was possible.
+        </p>
+      </div>
+    </div>
   </div>
 </section>
 
